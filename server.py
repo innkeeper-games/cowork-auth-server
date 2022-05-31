@@ -128,24 +128,13 @@ ssl_context.load_cert_chain(cert_pem, keyfile=key_pem)
 app = web.Application()
 
 cors = aiohttp_cors.setup(app, defaults={
-    "https://joincowork.com": aiohttp_cors.ResourceOptions(
+    "https://app.joincowork.com": aiohttp_cors.ResourceOptions(
             allow_credentials=True,
             expose_headers="*",
             allow_headers="*",
     ),
     # local enabled for debugging
     "http://local.joincowork.com": aiohttp_cors.ResourceOptions(
-            allow_credentials=True,
-            expose_headers="*",
-            allow_headers="*",
-    ),
-    "https://innkeepergames.com": aiohttp_cors.ResourceOptions(
-            allow_credentials=True,
-            expose_headers="*",
-            allow_headers="*",
-    ),
-    # local enabled for debugging
-    "http://local.innkeepergames.com": aiohttp_cors.ResourceOptions(
             allow_credentials=True,
             expose_headers="*",
             allow_headers="*",
